@@ -10,7 +10,7 @@ class GamesController < ApplicationController
     @user_word = params[:user_word]
     @letters = params[:letters]
 
-    p english_word?(@user_word), has?(@user_word)
+    # p english_word?(@user_word), has?(@user_word)
 
     if has?(@user_word) == false
       @answer = "You're using letters that were not given to you"
@@ -34,10 +34,10 @@ class GamesController < ApplicationController
   end
 
   def has?(word)
-     @letters = params[:letters].downcase.split(" ")
-    p "this is the arraz:", @letters
+    @letters = params[:letters].downcase.split(" ")
+    # p "this is the arraz:", @letters
     word.chars.all? do |character|
-     @letters.include?(character)
+      @letters.include?(character)
     end
   end
 end
