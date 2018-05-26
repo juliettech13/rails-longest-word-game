@@ -12,17 +12,6 @@ class GamesController < ApplicationController
 
     p english_word?(@user_word), has?(@user_word)
 
-    # if english_word?(@user_word) && has?(@user_word)
-    #   @answer = "Good one!"
-    # elsif english_word?(@user_word) == false
-    #   @answer = "That's not an English word"
-    # elsif has?(@user_word) == false
-    #   @answer = "You're using letters that were not given to you"
-    # else
-    #   @answer = "Youre simply wrong"
-    # end
-
-
     if has?(@user_word) == false
       @answer = "You're using letters that were not given to you"
     elsif english_word?(@user_word) == false
@@ -32,8 +21,6 @@ class GamesController < ApplicationController
     else
         @answer = "Youre simply wrong"
     end
-
-
   end
 
 
@@ -53,6 +40,4 @@ class GamesController < ApplicationController
      @letters.include?(character)
     end
   end
-
-
 end
